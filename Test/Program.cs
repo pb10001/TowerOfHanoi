@@ -15,12 +15,12 @@ namespace Test
         static void Main(string[] args)
         {
             //Main entry point
-            Console.WriteLine("Input a length of the tower:");
-            if (!int.TryParse(Console.ReadLine(), out length)) return;
-            Console.WriteLine("Input the source pile(Left:0, Center:1, Right: 2):");
-            if (!int.TryParse(Console.ReadLine(), out src)) return;
-            Console.WriteLine("Input the destination pile(Left:0, Center:1, Right: 2):");
-            if(!int.TryParse(Console.ReadLine(), out dest))return;
+            Console.WriteLine("Input a length of the tower(Default: 5):");
+            if (!int.TryParse(Console.ReadLine(), out length)) length = 5;
+            Console.WriteLine("Input the source pile(Left:0, Center:1, Right: 2, Default: Left):");
+            if (!int.TryParse(Console.ReadLine(), out src)) src = 0;
+            Console.WriteLine("Input the destination pile(Left:0, Center:1, Right: 2, Default: Center):");
+            if(!int.TryParse(Console.ReadLine(), out dest)) dest = 1;
             var tower = new Tower();
             tower.Init(length, src, dest);
             tower.DiskMoved += Tower_DiskMoved;
