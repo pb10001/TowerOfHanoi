@@ -16,6 +16,10 @@ namespace TowerOfHanoi
         /// </summary>
         public int DiskNum { get; set; }
         /// <summary>
+        /// Order of move
+        /// </summary>
+        public int Order { get; set; }
+        /// <summary>
         /// Source
         /// </summary>
         public PileLocation SrcPile { get; set; }
@@ -29,7 +33,7 @@ namespace TowerOfHanoi
         /// <returns></returns>
         public override string ToString()
         {
-            return string.Format("Move {0} from {1} to {2}", DiskNum, SrcPile, DestPile);
+            return string.Format("{0}: Move {1} from {2} to {3}", Order, DiskNum, SrcPile, DestPile);
         }
     }
 }
