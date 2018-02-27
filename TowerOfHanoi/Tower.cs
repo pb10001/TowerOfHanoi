@@ -40,7 +40,7 @@ namespace TowerOfHanoi
                 disks[i] = src;
             }
             this.length = length;
-            turn = 0;
+            order = 0;
             srcPile = src;
             destPile = dest;
             Moves = new List<Move>();
@@ -54,7 +54,7 @@ namespace TowerOfHanoi
         public void Init(int length, int src, int dest)
         {
             disks = new PileLocation[length];
-            turn = 0;
+            order = 0;
             for (int i = 0; i < length; i++)
             {
                 switch (src)
@@ -106,7 +106,7 @@ namespace TowerOfHanoi
 
         PileLocation[] disks;
         int length;
-        int turn;
+        int order;
         PileLocation srcPile;
         PileLocation destPile;
         /// <summary>
@@ -169,7 +169,7 @@ namespace TowerOfHanoi
             array[length - 1] = dest;
             Move move = new Move()
             {
-                Order = ++turn,
+                Order = ++order,
                 DiskNum = length - 1,
                 SrcPile = src,
                 DestPile = dest
